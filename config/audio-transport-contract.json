@@ -1,0 +1,225 @@
+{
+  "schema": "brickhouse.audio-transport-contract.v1",
+  "contractId": "audio-workbench-rev5-producer-loop",
+  "limits": {
+    "requestBytes": 1048576,
+    "responseBytes": 2097152,
+    "uploadChunkBytes": 786432,
+    "maxUploadParts": 256,
+    "maxStageBytes": 201326592,
+    "candidatePreviewBytes": 262144,
+    "artifactPreviewBytes": 786432
+  },
+  "routes": [
+    {
+      "id": "session.get",
+      "method": "GET",
+      "pattern": "^/v1/audio/session$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/session"
+    },
+    {
+      "id": "session.source",
+      "method": "POST",
+      "pattern": "^/v1/audio/session/source$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/session/source"
+    },
+    {
+      "id": "session.select",
+      "method": "POST",
+      "pattern": "^/v1/audio/session/select$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/session/select"
+    },
+    {
+      "id": "session.request.fulfill",
+      "method": "POST",
+      "pattern": "^/v1/audio/session/requests/[A-Za-z0-9._~-]+/fulfill$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/session/requests/request-1/fulfill"
+    },
+    {
+      "id": "tools.list",
+      "method": "GET",
+      "pattern": "^/v1/audio/tools$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/tools"
+    },
+    {
+      "id": "producer.loop",
+      "method": "GET",
+      "pattern": "^/v1/audio/producer-loop$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/producer-loop"
+    },
+    {
+      "id": "producer.context",
+      "method": "GET",
+      "pattern": "^/v1/audio/producer-context$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/producer-context"
+    },
+    {
+      "id": "producer.candidates",
+      "method": "GET",
+      "pattern": "^/v1/audio/candidates/[0-9]+$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/candidates/0"
+    },
+    {
+      "id": "producer.candidate.preview",
+      "method": "GET",
+      "pattern": "^/v1/audio/library/candidates/[0-9]{5,8}/preview/[0-9]+/[0-9]+$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/library/candidates/123456/preview/0/262144"
+    },
+    {
+      "id": "producer.play",
+      "method": "POST",
+      "pattern": "^/v1/audio/library/play$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/library/play"
+    },
+    {
+      "id": "producer.next",
+      "method": "POST",
+      "pattern": "^/v1/audio/library/next$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/library/next"
+    },
+    {
+      "id": "producer.more",
+      "method": "POST",
+      "pattern": "^/v1/audio/library/more$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/library/more"
+    },
+    {
+      "id": "producer.hold",
+      "method": "POST",
+      "pattern": "^/v1/audio/library/hold$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/library/hold"
+    },
+    {
+      "id": "producer.bundle.add",
+      "method": "POST",
+      "pattern": "^/v1/audio/library/bundle/add$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/library/bundle/add"
+    },
+    {
+      "id": "producer.bundle.remove",
+      "method": "POST",
+      "pattern": "^/v1/audio/library/bundle/remove$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/library/bundle/remove"
+    },
+    {
+      "id": "producer.bundle.reorder",
+      "method": "POST",
+      "pattern": "^/v1/audio/library/bundle/reorder$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/library/bundle/reorder"
+    },
+    {
+      "id": "producer.bundle.clear",
+      "method": "POST",
+      "pattern": "^/v1/audio/library/bundle/clear$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/library/bundle/clear"
+    },
+    {
+      "id": "producer.choose",
+      "method": "POST",
+      "pattern": "^/v1/audio/library/choose$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/library/choose"
+    },
+    {
+      "id": "audiotool.destination.verify",
+      "method": "POST",
+      "pattern": "^/v1/audio/audiotool/destination/verify$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/audiotool/destination/verify"
+    },
+    {
+      "id": "audiotool.destination.clear",
+      "method": "POST",
+      "pattern": "^/v1/audio/audiotool/destination/clear$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/audiotool/destination/clear"
+    },
+    {
+      "id": "audiotool.review",
+      "method": "POST",
+      "pattern": "^/v1/audio/audiotool/review$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/audiotool/review"
+    },
+    {
+      "id": "audiotool.bundle.review",
+      "method": "POST",
+      "pattern": "^/v1/audio/audiotool/bundle/review$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/audiotool/bundle/review"
+    },
+    {
+      "id": "audiotool.delivery.confirm",
+      "method": "POST",
+      "pattern": "^/v1/audio/audiotool/delivery/confirm$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/audiotool/delivery/confirm"
+    },
+    {
+      "id": "audiotool.bundle.delivery.confirm",
+      "method": "POST",
+      "pattern": "^/v1/audio/audiotool/bundle/delivery/confirm$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/audiotool/bundle/delivery/confirm"
+    },
+    {
+      "id": "audiotool.bundle.member.move",
+      "method": "POST",
+      "pattern": "^/v1/audio/audiotool/bundle/member/move$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/audiotool/bundle/member/move"
+    },
+    {
+      "id": "audiotool.delivery.undo",
+      "method": "POST",
+      "pattern": "^/v1/audio/audiotool/delivery/undo$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/audiotool/delivery/undo"
+    },
+    {
+      "id": "artifact.preview",
+      "method": "GET",
+      "pattern": "^/v1/audio/artifacts/[A-Za-z0-9._~-]+/preview/[0-9]+/[0-9]+$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/artifacts/artifact-1/preview/0/786432"
+    },
+    {
+      "id": "artifact.stage",
+      "method": "POST",
+      "pattern": "^/v1/audio/artifacts/stage$",
+      "transport": "stage",
+      "examplePath": "/v1/audio/artifacts/stage"
+    },
+    {
+      "id": "process.create",
+      "method": "POST",
+      "pattern": "^/v1/audio/process$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/process"
+    },
+    {
+      "id": "job.get",
+      "method": "GET",
+      "pattern": "^/v1/audio/jobs/[A-Za-z0-9._~-]+$",
+      "transport": "ordinary",
+      "examplePath": "/v1/audio/jobs/job-1"
+    }
+  ]
+}
